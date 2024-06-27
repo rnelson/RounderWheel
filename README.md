@@ -1,5 +1,7 @@
 # RounderWheel
 
+![Build status](https://github.com/rnelson/RounderWheel/actions/workflows/ant.yml/badge.svg) ![License](https://img.shields.io/github/license/rnelson/RounderWheel%20)
+
 For my graduate distributed systems class, we had to work with a distributed system: DNS. Specifically, we 
 were required to write a recursive DNS client that started at a random root server until it found the 
 requested answer. Only a few record types were in scope.

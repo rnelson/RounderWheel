@@ -14,12 +14,16 @@ just upload it for others to laugh at.
 This was written on Mac OS X 10.5 (Intel x64) in Java 5 with Ant 1.7 as the build system. It might work with 
 newer stuff, but it may not.
 
+It builds on FreeBSD 14.1/amd64 with OpenJDK 8 and Ant 1.10.
+
+## Building
+
+You can build a jar by simply running `ant` from the `RounderWheel` directory. The resulting jar file will be 
+placed in `dist`.
+
 ## Usage
 
-`ant dist` might build a jar for you? I haven't even attempted to build this, just looked through the code a 
-bit.
-
-But once you _somehow_ have a jar, you can run it as follows from the appropriate directory (`RounderWheel`?):
+From within `RounderWheel`, you can run the jar file as follows:
 
 ```shell
 $ java -jar dist/RounderWheel.jar

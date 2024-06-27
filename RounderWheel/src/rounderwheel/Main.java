@@ -1,13 +1,9 @@
 /*
  * RounderWheel DNS Resolver
- * 
- * Class:         CSCE 855 - Distributed Operating Systems
- * Semester:      Fall 2008
- * Student:       Ross Nelson <rnelson@cse.unl.edu>
- * Due Date:      14 November 2008, 10:30
- * Description:   This assignment reinvents the wheel (makes it rounder,
- *                perhaps?) by resolving DNS queries by hand.
- * 
+ * Licensed under the MIT license.
+ *
+ * (C) 2008, 2024 Ross Nelson
+ * Originally written for CSCE 855 (Distributed Operating Systems), University of Nebraska-Lincoln
  */
 
 package rounderwheel;

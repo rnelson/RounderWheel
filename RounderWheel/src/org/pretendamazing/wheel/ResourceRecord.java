@@ -29,9 +29,8 @@ public class ResourceRecord {
 	 * @param buf the {@link ByteBuffer} to read from
 	 * @param records the {@link List} of {@link ResourceRecord}s to add to
 	 * @param count the count of this type of record
-	 * @throws java.lang.Exception
 	 */
-	public static void parse(ByteBuffer buf, List<ResourceRecord> records, int count) throws Exception {
+	public static void parse(ByteBuffer buf, List<ResourceRecord> records, int count) {
 		// Get each question section
 		for (int i = 0; i < count; i++) {
 			ResourceRecord rr = new ResourceRecord();
@@ -64,17 +63,6 @@ public class ResourceRecord {
 					((SoaRecord) rr.RDATA).parse(buf, rr.RDLENGTH);
 					break;
 				default:
-					/*
-					System.err.println("Incoming exception from ResourceRecord.parse()");
-					//System.err.println("  Name length: " + nameLength);
-					
-					System.err.println("  Name:        " + rr.NAME);
-					System.err.println("  Type:        " + rr.TYPE);
-					System.err.println("  Class:       " + rr.CLASS);
-					System.err.println("  TTL:         " + rr.TTL);
-					System.err.println("  Data length: " + rr.RDLENGTH);
-					throw new Exception("resource record contains type not implemented (" + rr.TYPE + ")");
-					*/
 			}
 			
 			records.add(rr);

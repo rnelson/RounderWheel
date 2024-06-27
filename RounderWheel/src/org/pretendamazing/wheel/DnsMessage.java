@@ -36,7 +36,7 @@ public class DnsMessage {
 	 * Parses a {@link DnsMessage}
 	 * 
 	 * @param data the {@link ByteBuffer} to read from
-	 * @throws java.lang.Exception
+	 * @throws java.lang.Exception an unsuccessful RCODE was returned
 	 */
 	public void parse(ByteBuffer data) throws Exception {
 		// Parse the header

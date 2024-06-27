@@ -50,7 +50,7 @@ public class RootServers {
 	/**
 	 * Gets a random {@link RootServer} with/without preference for IPv6-enabled servers
 	 * 
-	 * @param favorIpv6 {@link true} to favor ipv6-enabled servers, else {@link false}
+	 * @param favorIpv6 true to favor ipv6-enabled servers, else false
 	 * @return a random {@link RootServer}
 	 */
 	public RootServer getRandomServer(boolean favorIpv6) {

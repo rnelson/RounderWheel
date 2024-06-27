@@ -37,7 +37,7 @@ public class DnsMessageHeader {
 	/**
 	 * Parses the DNS message header
 	 *
-	 * @param data the data to parse from
+	 * @param buf the data to parse from
 	 */
 	public void parse(ByteBuffer buf) {		
 		// Row 1

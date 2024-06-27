@@ -7,7 +7,6 @@
  * Due Date:	    14 November 2008, 10:30
  * Description:	    This assignment reinvents the wheel (makes it rounder,
  *		    perhaps?) by resolving DNS queries by hand.
- * File ID:	    $Id$
  * 
  */
 

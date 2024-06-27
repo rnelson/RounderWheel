@@ -78,8 +78,7 @@ public class Main {
 	 * Prints the header! :-)
 	 */
 	public static void printHeader() {
-		System.out.println("RounderWheel DNS Resolver, version 20081114");
-		System.out.println(" by Ross Nelson <rnelson@cse.unl.edu>");
+		System.out.println("RounderWheel DNS Resolver (v20240624)");
 		System.out.println("");
 	}
 }

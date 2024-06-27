@@ -16,6 +16,8 @@ newer stuff, but it may not.
 
 It builds on FreeBSD 14.1/amd64 with OpenJDK 8 and Ant 1.10.
 
+As of 2024, it does not function. I'm not sure when it broke and have not diagnosed what is broken.
+
 ## Building
 
 You can build a jar by simply running `ant` from the `RounderWheel` directory. The resulting jar file will be 

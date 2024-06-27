@@ -11,10 +11,8 @@ just upload it for others to laugh at.
 
 ## Details
 
-This was written on Mac OS X 10.5 (Intel x64) in Java 5 with Ant 1.7 as the build system. It might work with 
-newer stuff, but it may not.
-
-It builds on FreeBSD 14.1/amd64 with OpenJDK 8 and Ant 1.10.
+RounderWheel requires at least Java 8 (1.8). It has been tested on FreeBSD 14.1/amd64 with OpenJDK 8, 
+building with Ant 1.10.
 
 As of 2024, it does not function. I'm not sure when it broke and have not diagnosed what is broken.
 

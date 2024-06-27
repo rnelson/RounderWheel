@@ -1,0 +1,84 @@
+DESIGN
+$Id$
+
+Files
+-----
+\
+ \-- DESIGN - design documentation
+ \-- README - this file
+ \-- SAMPLE - sample runs of the program
+ \-- RounderWheel
+      \-- build.xml - Ant build script
+      \-- docs - JavaDoc output
+           \-- (unimportant)
+      \-- Makefile - a Makefile for the project
+      \-- manifest.mf - possibly an Ant by-product
+      \-- nbproject - NetBeans project information
+           \-- (unimportant)
+      \-- src
+           \-- org
+                \-- pretendamazing
+                     \-- wheel - the package holding all DNS work
+                          \-- Address.java - holds an array of shorts depicting an IPv4 address
+                          \-- ARecord.java - data structure for A records
+                          \-- CnameRecord.java - data structure for CNAME records
+                          \-- DnsMessage.java - data structure for the entire DNS message
+                          \-- DnsMessageHeader.java - data structure for the message header
+                          \-- DnsRecord.java - abstract class for all record types
+                          \-- Helper.java - contains helper methods
+                          \-- InetAddress.java - class that does the actual work
+                          \-- NsRecord.java - data structure for NS records
+                          \-- Pair.java - data structure for pairing a key and a value
+                          \-- QuestionSection.java - data structure for question sections
+                          \-- ResourceRecord.java - data structure for resource records
+                          \-- RootServer.java - individual root server and its information
+                          \-- RootServers.java - list of root servers
+                          \-- SoaRecord.java - data structure for SOA records
+           \-- rounderwheel
+                \-- Main.java - the RounderWheel shell
+      \-- test - JUnit test folder
+           \-- (unimportant, unused)
+
+Compiling Environment
+---------------------
+Development was done on a MacBook Pro running Mac OS X 10.5.5, dual core
+64-bit Intel Core 2 Duo @ 2.2 GHz with 4 GB RAM.
+
+Initial development was done in Xcode 3.1 but changed to NetBeans 6.1 near
+completeion.
+
+The Java build in use is 1.5.0_16-b06-284 from Apple. Ant is v1.7.0.
+
+The program has been tested to compile and run on cse with the default 'javac',
+'java', and 'ant' binaries in $PATH.
+
+Compilation Steps
+-----------------
+To compile, simply type 'ant' from within the 'RounderWheel' directory. As the
+directions dictate that a Makefile be included, one was added that simply calls
+ant for the user.
+
+Execution Instructions
+----------------------
+From within the 'RounderWheel' directory, the application can be run with the following
+command:
+        java -jar dist/RounderWheel.jar
+
+It takes an optional argument of a prompt (it works best to quote it); additional arguments
+are ignored.
+
+The problem overview section of PA2.doc shows resolving an A name and a CNAME with everything
+working as expected. I wrote rounderwheel.Main as I did to cover the third example.
+
+        C:\>grads.cse.unl.edu
+            grads.cse.unl.edu A = does not exist
+
+The only way that this can be implemented is by modifying the shell under which it is run; the
+system administrators would not like me finding a way to gain escalated privileges and installing
+a modified shell to support the third example (and if it's not graded on cse, I have no access to
+the system at all), so I wrote my own pseudoshell to do it for me.
+
+The 'myresolver' "command" is optional. If given, it is simply stripped from the input
+before being passed on to InetAddress.getByName().
+
+To exit the application, use the "quit" command or ^C.

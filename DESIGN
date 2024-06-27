@@ -1,0 +1,78 @@
+DESIGN
+$Id$
+
+Overall Program Design
+----------------------
+I set out to create a very object-oriented DNS resolver, and
+I accomplished that. My main program, rounderwheel.Main, has
+no DNS knowledge whatsoever. Everything that has anything to
+do with the low-level protocol and sockets programming is in
+the org.pretendamazing.wheel package.
+
+Lower-Level Program Design
+--------------------------
+The "doing underneath" material is covered in RFC 1035, which
+can be located at http://www.ietf.org/rfc/rfc1035.txt :)
+
+The program can only deal with a limited subset of what DNS
+specifies. The only records it can handle are A, NS, CNAME,
+and SOA.
+
+The DnsMessage and DnsMessageHeader classes take care of the
+overall message work, with the latter class being dedicated 
+to the creation and parsing of message headers.
+
+The QuestionSection and ResourceRecord classes are designed 
+to create and parse their respective sections of messages.
+
+When ResourceRecords are created from incoming messages, they
+create a DnsRecord object to hold the RDATA section. Which
+type it creates depends on what the TYPE octets in the
+message specified.
+
+The  java.net.InetSocketAddress(String, int) constructor
+is called every time a new query is requested, whether as
+part of an existing user query or a new query. This method
+call is required to connect to a remote system using the NIO
+socket classes. Seeing as how I have to call it either way,
+I chose to use this to get around the problem that Adam stated
+after class today with .org and .biz following a newer RFC than
+1035. If the additional section contains an IP address for the
+randomly chosen server, it is given as the argument. If no
+proper IP was given (such as .org and .biz), the constructor
+is allowed to resolve the next server's IP as required to
+continue resolution. This allows all domain types to resolve.
+
+A large portion of my development time was spent on the
+Helper class, which was designed to house multiple helper
+functions; I didn't have time to implement any extra
+functionality, so it currently only has a getName() method.
+More information is available in the JavaDoc for getName().
+
+Really Low-Level Program Design
+-------------------------------
+I have generated JavaDoc documentation for the assignment.
+It is in the 'doc' subfolder of 'RounderWheel'.
+
+Design Tradeoffs
+----------------
+I initially started writing this with a byte[]. After about
+a day and a half, I ran across the ByteBuffer class. This
+class GREATLY simplified my task as it handled converting
+between byte and other formats and switching the order of
+my entire buffer between big and little endian. I started
+using this for one small portion that I was having trouble
+with, but soon switched the entire program to using the
+ByteBuffer class.
+
+Approximately 12 hours were spent on Helper.getName() in its
+various incarnations. Again, more information on that can
+be found in the JavaDoc.
+
+Improvements
+------------
+The obvious improvement is to support more of the protocol.
+The program seems to have quite a few failed responses; these
+could be caused by multiple things (see README), but switching
+to TCP in addition to supporting more of the protocol would
+likely resolve many of the errors.

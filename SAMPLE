@@ -1,0 +1,35 @@
+boxer:RounderWheel rnelson$ java -jar dist/RounderWheel.jar 
+RounderWheel DNS Resolver, version 20081114
+ by Ross Nelson <rnelson@cse.unl.edu>
+
+C:\>myresolver cse.unl.edu
+cse.unl.edu A = 129.93.165.2
+C:\>myresolver www.cse.unl.edu
+www.cse.unl.edu A = CNAME to cse.unl.edu
+www.cse.unl.edu A = 129.93.165.2
+C:\>grads.cse.unl.edu
+grads.cse.unl.edu A = does not exist
+C:\>pretendamazing.org
+pretendamazing.org A = 67.207.134.31
+C:\>quit
+boxer:RounderWheel rnelson$ java -jar dist/RounderWheel.jar "wheel> "
+RounderWheel DNS Resolver, version 20081114
+ by Ross Nelson <rnelson@cse.unl.edu>
+
+wheel> liveharmony.org
+liveharmony.org A = 208.94.117.124
+liveharmony.org A = 208.94.117.59
+liveharmony.org A = 208.94.116.6
+wheel> cnn.com
+cnn.com A = 157.166.226.26
+cnn.com A = 157.166.224.25
+cnn.com A = 157.166.224.26
+cnn.com A = 157.166.226.25
+wheel> apple.com
+apple.com A = 17.149.160.49
+wheel> 4.2.2.4
+4.2.2.4 A = does not exist
+wheel> quit
+boxer:RounderWheel rnelson$
+
+$Id$

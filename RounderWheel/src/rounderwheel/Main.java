@@ -8,7 +8,7 @@
 
 package rounderwheel;
 
-import org.pretendamazing.wheel.*;
+import net.libexec.rounderwheel.*;
 import java.io.*;
 
 public class Main {
